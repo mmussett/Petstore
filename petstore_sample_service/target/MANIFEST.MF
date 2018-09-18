@@ -1,0 +1,18 @@
+Manifest-Version: 1.0.0.201809171349
+Bundle-SymbolicName: petstore_sample_service
+Bundle-ManifestVersion: 2
+TIBCO-BW-Edition: bwcloud
+Bundle-Vendor: TIBCO Software Inc.
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",com.tib
+ co.bw.palette; filter:="(name=bw.generalactivities)",com.tibco.bw.sha
+ redresource.model; filter:="(name=bw.httpconnector)",com.tibco.bw.bin
+ ding.model; filter:="(name=bw.rest)"
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-Version: 1.0.0 V75 2016-04-19
+Bundle-Name: Petstore_sample_service Module
+Bundle-Version: 1.0.0.201809171349
+Bundle-ClassPath: .
+TIBCO-BW-ApplicationModule: META-INF/module.bwm
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+

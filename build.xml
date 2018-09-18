@@ -1,0 +1,35 @@
+<project name="Petstore" default="." basedir=".">
+
+<target name="init">
+</target>
+
+<target name="build" depends="">
+
+    <exec dir="${basedir}\petstore_sample_service_application.parent" executable="cmd">
+      <arg line="/c 'mvn clean package'" />
+    </exec>
+
+</target>
+
+<target name="tibcli-push" depends="">
+    <copy file="${basedir}\petstore_sample_service_application.parent\manifest.json" todir="${basedir}\petstore_sample_service_application\target" />  
+
+    <exec dir="${basedir}/petstore_sample_service_application/target" executable="cmd">
+      <arg value="/c push.bat"/>
+    </exec>
+
+</target>
+
+<target name="tibcli-delete" depends="">
+    <exec dir="${basedir}/petstore_sample_service_application/target" executable="cmd">
+      <arg line="/c 'tibcli app delete --force petstore_sample_service_application'" />
+    </exec>
+</target>
+
+
+<target name="tibcli-login" depends="">
+  <exec executable="tibcli">
+    <arg value="login '-p T1bc0.Sarah72 -o EMEA North PreSales -r eu-west-1'"/>
+  </exec>
+</target>
+</project>
