@@ -10,5 +10,9 @@ shift
 shift
 cd %ws%\%app%\target
 copy %ws%\%app%.parent\manifest.json .
-tibcli login -p %password% -o %org% -r %reg%
-tibcli app push
+c:\opt\tibcli\tibcli login -p %password% -o %org% -r %reg%
+if errorlevel gtr 0 exit
+c:\opt\tibcli\tibcli app push
+if errorlevel gtr 0 exit
+exit 0
+
