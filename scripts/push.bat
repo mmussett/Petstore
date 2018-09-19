@@ -1,3 +1,4 @@
+echo %path%
 set password=%1
 set org=%2
 set reg=%3
