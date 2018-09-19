@@ -14,7 +14,6 @@ copy %ws%\%app%.parent\manifest.json .
 tibcli -d login -p %password% -o %org% -r %reg%
 if %ERRORLEVEL% NEQ 0 (
     echo error - unable to login to TIBCO Cloud
-    exit
 )
 tibcli -d app push
 if %ERRORLEVEL% NEQ 0 (
