@@ -11,8 +11,14 @@ shift
 cd %ws%\%app%\target
 copy %ws%\%app%.parent\manifest.json .
 c:\opt\tibcli\tibcli login -p %password% -o %org% -r %reg%
-if errorlevel gtr 0 exit
+if %ERRORLEVEL% NEQ 0 (
+    echo error - unable to login to TIBCO Cloud
+    exit
+)
 c:\opt\tibcli\tibcli app push
-if errorlevel gtr 0 exit
+if %ERRORLEVEL% NEQ 0 (
+    echo error - unable to push application to TIBCO Cloud
+    exit
+)
 exit 0
 
