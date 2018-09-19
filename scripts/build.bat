@@ -1,2 +1,4 @@
-cd petstore_sample_service_application.parent
+set app=%1
+shift
+cd ..\%app%.parent
 mvn clean package
